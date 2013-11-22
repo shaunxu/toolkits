@@ -10,32 +10,15 @@ namespace Wormhole
 {
     public interface IEndpointProvider
     {
-        ServiceEndpoint GetEndpoint<T>(string hostName, string serviceTypeName) where T : class;
-
-        Type EndpointBehaviorType { get; }
-
-        IEndpointBehavior GetBehavior();
+        ServiceEndpoint GetEndpoint<T>() where T : class;
     }
 
     public class StubEndpointProvider : IEndpointProvider
     {
-        public ServiceEndpoint GetEndpoint<T>(string hostName, string serviceTypeName) where T : class
+        public ServiceEndpoint GetEndpoint<T>() where T : class
         {
             var factory = new ChannelFactory<T>("BasicHttpBinding_ISamepleService");
             return factory.Endpoint;
-        }
-
-        public Type EndpointBehaviorType
-        {
-            get 
-            {
-                return null; 
-            }
-        }
-
-        public IEndpointBehavior GetBehavior()
-        {
-            throw new NotImplementedException();
         }
     }
 

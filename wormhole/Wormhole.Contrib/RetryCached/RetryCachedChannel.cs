@@ -1,42 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Runtime.Remoting.Proxies;
 using System.Runtime.Remoting.Messaging;
-using System.Threading;
 using System.ServiceModel;
-using System.ServiceModel.Description;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Wormhole
+namespace Wormhole.Contrib.RetryCached
 {
-    internal class SmartChannel<TContract> : RealProxy where TContract : class
+    public class RetryCachedChannel<TContract> : CustomizableChannel<TContract> where TContract : class
     {
-        private int _retryCount;
-        private TimeSpan _retryInterval;
-        private ISmartChannelFactory<TContract> _factory;
-
         private TContract _channel;
         private object _channelLock;
 
-        public SmartChannel(ISmartChannelFactory<TContract> factory, int retryCount, TimeSpan retryInterval)
-            : base(typeof(TContract))
+        public RetryCachedChannel(ICustomizableChannelFactory<TContract> factory, RetryCachedChannelContext context)
+            : base(factory, context)
         {
-            _factory = factory;
-            _retryCount = retryCount;
-            _retryInterval = retryInterval;
-
             _channel = null;
             _channelLock = new object();
         }
 
         private TContract GetChannel(bool refresh)
         {
-            if (refresh)
+            if (refresh || !GetCustomizableChannelContext<RetryCachedChannelContext>().EnableCache)
             {
                 lock (_channelLock)
                 {
-                    _channel = _factory.GetBaseChannel();
+                    _channel = ChannelFactory.GetBaseChannel();
                 }
             }
             else
@@ -47,7 +38,7 @@ namespace Wormhole
                     {
                         if (_channel == null)
                         {
-                            _channel = _factory.GetBaseChannel();
+                            _channel = ChannelFactory.GetBaseChannel();
                         }
                     }
                 }
@@ -56,12 +47,11 @@ namespace Wormhole
             return _channel;
         }
 
-        public override IMessage Invoke(IMessage msg)
+        protected override IMessage OnInvoke(IMessage msg)
         {
-            var methodCall = msg as IMethodCallMessage;
-            var methodBase = methodCall.MethodBase;
+            var interval = GetCustomizableChannelContext<RetryCachedChannelContext>().RetryInterval;
 
-            var retries = _retryCount;
+            var retries = GetCustomizableChannelContext<RetryCachedChannelContext>().RetryCount;
             var refresh = false;
             while (true)
             {
@@ -69,8 +59,8 @@ namespace Wormhole
                 var channel = GetChannel(refresh);
                 try
                 {
-                    var result = methodBase.Invoke(channel, methodCall.Args);
-                    return new ReturnMessage(result, null, 0, methodCall.LogicalCallContext, methodCall);
+                    Console.WriteLine("channel {0} is working...", channel.GetHashCode());
+                    return base.OnInvoke(msg);
                 }
                 catch (Exception ex)
                 {
@@ -84,7 +74,7 @@ namespace Wormhole
                         {
                             Console.WriteLine("retry {0}: retry", retries);
                             refresh = true;
-                            Thread.Sleep(_retryInterval);
+                            Thread.Sleep(interval);
                         }
                         else
                         {

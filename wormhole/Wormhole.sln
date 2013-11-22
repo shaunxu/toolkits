@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleService", "SampleServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{2E4ED5A2-347C-4D8A-A712-719F4BDE233C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wormhole.Sample", "Wormhole.Sample\Wormhole.Sample.csproj", "{D03A2378-876A-4D56-92AF-1972EC2DA09D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wormhole.Contrib", "Wormhole.Contrib\Wormhole.Contrib.csproj", "{1E2F6EA3-5881-4777-9CAF-8B8788B0D187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +37,19 @@ Global
 		{2E4ED5A2-347C-4D8A-A712-719F4BDE233C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E4ED5A2-347C-4D8A-A712-719F4BDE233C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E4ED5A2-347C-4D8A-A712-719F4BDE233C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03A2378-876A-4D56-92AF-1972EC2DA09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03A2378-876A-4D56-92AF-1972EC2DA09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03A2378-876A-4D56-92AF-1972EC2DA09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03A2378-876A-4D56-92AF-1972EC2DA09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2F6EA3-5881-4777-9CAF-8B8788B0D187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2F6EA3-5881-4777-9CAF-8B8788B0D187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2F6EA3-5881-4777-9CAF-8B8788B0D187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2F6EA3-5881-4777-9CAF-8B8788B0D187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8
 	EndGlobalSection
 EndGlobal

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wormhole
 {
-    internal interface ISmartChannelFactory<T> where T : class
+    public class CustomizableChannelContext
     {
-        T GetBaseChannel();
     }
 }

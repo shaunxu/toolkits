@@ -41,19 +41,15 @@ namespace Wormhole
             _endpointProvider = endpointProvider;
         }
 
-        private TFactory GetChannelFactory<TFactory, TContract>(Func<ServiceEndpoint, TFactory> factoryInitializer, string hostName, string serviceTypeName)
+        private TFactory GetChannelFactory<TFactory, TContract>(Func<ServiceEndpoint, TFactory> factoryInitializer)
             where TFactory : ChannelFactory<TContract>
             where TContract : class
         {
-            var key = string.Format("{0}|{1}|{2}|{3}", typeof(TContract).AssemblyQualifiedName, hostName, serviceTypeName, 0);
+            var key = typeof(TContract).AssemblyQualifiedName;
             var factory = _factories.GetOrAdd(key, (k) =>
             {
-                var endpoint = _endpointProvider.GetEndpoint<TContract>(hostName, serviceTypeName);
+                var endpoint = _endpointProvider.GetEndpoint<TContract>();
                 var value = factoryInitializer.Invoke(endpoint);
-                if (_endpointProvider.EndpointBehaviorType != null && !value.Endpoint.EndpointBehaviors.Contains(_endpointProvider.EndpointBehaviorType))
-                {
-                    value.Endpoint.EndpointBehaviors.Add(_endpointProvider.GetBehavior());
-                }
                 return value;
             });
             return factory as TFactory;
@@ -61,74 +57,76 @@ namespace Wormhole
 
         #region Simple ChannelFactory, Channel, Invoke
 
-        public ChannelFactory<T> GetSimpleChannelFactory<T>(string hostName = "", string serviceTypeName = "") where T : class
+        public ChannelFactory<T> GetSimpleChannelFactory<T>() where T : class
         {
-            return GetChannelFactory<ChannelFactory<T>, T>((ep) => new SmartChannelFactory<T>(ep), hostName, serviceTypeName);
+            var context = new CustomizableChannelContext();
+            return GetChannelFactory<ChannelFactory<T>, T>((ep) => new CustomizableChannelFactory<T, CustomizableChannelContext>(context, ep));
         }
 
-        public T GetSimpleChannel<T>(string hostName = "", string serviceTypeName = "") where T : class
+        public T GetSimpleChannel<T>() where T : class
         {
-            var factory = GetSimpleChannelFactory<T>(hostName, serviceTypeName);
+            var factory = GetSimpleChannelFactory<T>();
             return factory.CreateChannel();
         }
 
-        public void Invoke<T>(Action<T> action, string hostName = "", string serviceTypeName = "") where T : class
+        public void Invoke<T>(Action<T> action) where T : class
         {
-            var channel = GetSimpleChannel<T>(hostName, serviceTypeName);
+            var channel = GetSimpleChannel<T>();
             action.Invoke(channel);
         }
 
-        public TResult Invoke<TContract, TResult>(Func<TContract, TResult> func, string hostName = "", string serviceTypeName = "") where TContract : class
+        public TResult Invoke<TContract, TResult>(Func<TContract, TResult> func) where TContract : class
         {
-            var channel = GetSimpleChannel<TContract>(hostName, serviceTypeName);
+            var channel = GetSimpleChannel<TContract>();
             return func.Invoke(channel);
         }
 
-        public Task InvokeAsync<T>(Action<T> action, string hostName = "", string serviceTypeName = "") where T : class
+        public Task InvokeAsync<T>(Action<T> action) where T : class
         {
-            return Task.Run(() => Invoke<T>(action, hostName, serviceTypeName));
+            return Task.Run(() => Invoke<T>(action));
         }
 
-        public Task<TResult> InvokeAsync<TContract, TResult>(Func<TContract, TResult> func, string hostName = "", string serviceTypeName = "") where TContract : class
+        public Task<TResult> InvokeAsync<TContract, TResult>(Func<TContract, TResult> func) where TContract : class
         {
-            return Task.Run(() => Invoke<TContract, TResult>(func, hostName, serviceTypeName));
+            return Task.Run(() => Invoke<TContract, TResult>(func));
         }
 
         #endregion
 
         #region Duplex ChannelFactory, Channel, Invoke
 
-        public DuplexChannelFactory<T> GetDuplexChannelFactory<T>(InstanceContext instanceContext, string hostName = "", string serviceTypeName = "") where T : class
+        public DuplexChannelFactory<T> GetDuplexChannelFactory<T>(InstanceContext instanceContext) where T : class
         {
-            return GetChannelFactory<DuplexChannelFactory<T>, T>((ep) => new SmartDuplexChannelFactory<T>(instanceContext, ep), hostName, serviceTypeName);
+            var context = new CustomizableChannelContext();
+            return GetChannelFactory<DuplexChannelFactory<T>, T>((ep) => new CustomizableDuplexChannelFactory<T, CustomizableChannelContext>(context, instanceContext, ep));
         }
 
-        public T GetDuplexChannel<T>(InstanceContext instanceContext, string hostName = "", string serviceTypeName = "") where T : class
+        public T GetDuplexChannel<T>(InstanceContext instanceContext) where T : class
         {
-            var factory = GetDuplexChannelFactory<T>(instanceContext, hostName, serviceTypeName);
+            var factory = GetDuplexChannelFactory<T>(instanceContext);
             return factory.CreateChannel();
         }
 
-        public void Invoke<T>(InstanceContext instanceContext, Action<T> action, string hostName = "", string serviceTypeName = "") where T : class
+        public void Invoke<T>(InstanceContext instanceContext, Action<T> action) where T : class
         {
-            var channel = GetDuplexChannel<T>(instanceContext, hostName, serviceTypeName);
+            var channel = GetDuplexChannel<T>(instanceContext);
             action.Invoke(channel);
         }
 
-        public TResult Invoke<TContract, TResult>(InstanceContext instanceContext, Func<TContract, TResult> func, string hostName = "", string serviceTypeName = "") where TContract : class
+        public TResult Invoke<TContract, TResult>(InstanceContext instanceContext, Func<TContract, TResult> func) where TContract : class
         {
-            var channel = GetDuplexChannel<TContract>(instanceContext, hostName, serviceTypeName);
+            var channel = GetDuplexChannel<TContract>(instanceContext);
             return func.Invoke(channel);
         }
 
-        public Task InvokeAsync<T>(InstanceContext instanceContext, Action<T> action, string hostName = "", string serviceTypeName = "") where T : class
+        public Task InvokeAsync<T>(InstanceContext instanceContext, Action<T> action) where T : class
         {
-            return Task.Run(() => Invoke<T>(instanceContext, action, hostName, serviceTypeName));
+            return Task.Run(() => Invoke<T>(instanceContext, action));
         }
 
-        public Task<TResult> InvokeAsync<TContract, TResult>(InstanceContext instanceContext, Func<TContract, TResult> func, string hostName = "", string serviceTypeName = "") where TContract : class
+        public Task<TResult> InvokeAsync<TContract, TResult>(InstanceContext instanceContext, Func<TContract, TResult> func) where TContract : class
         {
-            return Task.Run(() => Invoke<TContract, TResult>(instanceContext, func, hostName, serviceTypeName));
+            return Task.Run(() => Invoke<TContract, TResult>(instanceContext, func));
         }
 
         #endregion
