@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Wormhole.Contrib.RetryCached;
+using Wormhole.Contrib.Topaz;
 using Wormhole.Sample.Contract;
 
 namespace Wormhole.Sample.Client
@@ -56,6 +58,32 @@ namespace Wormhole.Sample.Client
                         var y = int.Parse(Console.ReadLine());
                         var result = duplexProxy.AddAndEcho(x, y);
                         Console.WriteLine("duplexProxy.Add({0}, {1}) = {2}", x, y, result);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine("topaz ...");
+            var strategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var topazContext = new TopazChannelContext(strategy);
+            var topazFactory = new TopazChannelFactory<ISimpleService>(topazContext, Consts.Binding, Consts.SimpleServiceAddress);
+            var topazProxy = topazFactory.CreateChannel();
+            using (topazProxy as IDisposable)
+            {
+                while (true)
+                {
+                    Console.WriteLine("invoke? (y|n)");
+                    if (string.Compare(Console.ReadLine(), "y", true) == 0)
+                    {
+                        Console.WriteLine("x = ?");
+                        var x = int.Parse(Console.ReadLine());
+                        Console.WriteLine("y = ?");
+                        var y = int.Parse(Console.ReadLine());
+                        var result = topazProxy.Add(x, y);
+                        Console.WriteLine("topazProxy.Add({0}, {1}) = {2}", x, y, result);
                     }
                     else
                     {

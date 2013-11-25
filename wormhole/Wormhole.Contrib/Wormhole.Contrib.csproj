@@ -49,6 +49,10 @@
     <Compile Include="RetryCached\RetryCachedChannelContext.cs" />
     <Compile Include="RetryCached\RetryCachedChannelFactory.cs" />
     <Compile Include="RetryCached\RetryCachedDuplexChannelFactory.cs" />
+    <Compile Include="Topaz\TopazChannel.cs" />
+    <Compile Include="Topaz\TopazChannelContext.cs" />
+    <Compile Include="Topaz\TopazChannelFactory.cs" />
+    <Compile Include="Topaz\TopazDuplexChannelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wormhole\Wormhole.csproj">
@@ -59,9 +63,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Topaz\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
