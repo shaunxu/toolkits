@@ -47,7 +47,7 @@ namespace Wormhole.Contrib.RetryCached
             return _channel;
         }
 
-        protected override IMessage OnInvoke(IMessage msg)
+        public override IMessage Invoke(IMessage msg)
         {
             var interval = GetCustomizableChannelContext<RetryCachedChannelContext>().RetryInterval;
 
@@ -60,7 +60,7 @@ namespace Wormhole.Contrib.RetryCached
                 try
                 {
                     Console.WriteLine("channel {0} is working...", channel.GetHashCode());
-                    return base.OnInvoke(msg);
+                    return base.Invoke(msg, channel);
                 }
                 catch (Exception ex)
                 {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Wormhole.Sample.Contract;
 
-namespace Wormhole.Sample
+namespace Wormhole.Sample.Client
 {
     public class Callback : ICallback
     {

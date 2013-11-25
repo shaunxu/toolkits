@@ -5,13 +5,13 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wormhole.Sample
+namespace Wormhole.Sample.Contract
 {
     [ServiceContract(CallbackContract = typeof(ICallback))]
     public interface IDuplexService
     {
         [OperationContract]
-        string Add(int x, int y);
+        string AddAndEcho(int x, int y);
     }
 
     public interface ICallback

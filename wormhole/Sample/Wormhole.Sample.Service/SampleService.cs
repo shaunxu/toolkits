@@ -4,13 +4,22 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using Wormhole.Sample.Contract;
 
-namespace Wormhole.Sample
+namespace Wormhole.Sample.Service
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
-    public class DuplexService : IDuplexService
+    public class SampleService : ISimpleService, IDuplexService
     {
-        public string Add(int x, int y)
+        public int Add(int x, int y)
+        {
+            Console.WriteLine("SimpleService.Add({0}, {1}) invoking...", x, y);
+            var result = x + y;
+            Console.WriteLine("SimpleService.Add({0}, {1}) = {2}", x, y, result);
+            return result;
+        }
+
+        public string AddAndEcho(int x, int y)
         {
             Console.WriteLine("DuplexService.Add({0}, {1}) invoking...", x, y);
             var result = x + y;

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Wormhole.Sample")]
+[assembly: AssemblyTitle("Wormhole.Sample.Contract")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("IGT Technology Development (Beijing) Co., Ltd.")]
-[assembly: AssemblyProduct("Wormhole.Sample")]
+[assembly: AssemblyProduct("Wormhole.Sample.Contract")]
 [assembly: AssemblyCopyright("Copyright © IGT Technology Development (Beijing) Co., Ltd. 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bdb091c5-1882-47d1-9ae3-b52e05d77f0f")]
+[assembly: Guid("6ad235dc-6f9c-4b9a-9259-a3de664da109")]
 
 // Version information for an assembly consists of the following four values:
 //

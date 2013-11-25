@@ -37,14 +37,14 @@ namespace Wormhole
 
         public override IMessage Invoke(IMessage msg)
         {
-            return OnInvoke(msg);
+            var channel = ChannelFactory.GetBaseChannel();
+            return Invoke(msg, channel);
         }
 
-        protected virtual IMessage OnInvoke(IMessage msg)
+        protected IMessage Invoke(IMessage msg, TContract channel)
         {
             var methodCall = msg as IMethodCallMessage;
             var methodBase = methodCall.MethodBase;
-            var channel = ChannelFactory.GetBaseChannel();
             var result = methodBase.Invoke(channel, methodCall.Args);
             return new ReturnMessage(result, null, 0, methodCall.LogicalCallContext, methodCall);
         }
