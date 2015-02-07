@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/kendo.common.min.css" />
+    <link rel="stylesheet" href="lib/kendo.default.min.css" />
+    <link rel="stylesheet" href="lib/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="lib/kendo.dataviz.default.min.css" />
+    <link rel="stylesheet" href="lib/kendo.default.mobile.min.css" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="lib/kendo.all.min.js"></script>
+
+    <script src="app.js"></script>
+
+    <style scoped>
+        span.k-tooltip {
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body data-ng-app="app">
+    <div data-ng-controller="MainCtrl">
+        <div data-kendo-validator="jobValidator" k-options="validatorOptions" class="k-content">
+            <p>
+                <label for="jobname" class="k-request-retry">Job Name</label>
+                <input type="text" id="jobname" name="Job Name" class="k-textbox" placeholder="Job Name"
+                       data-ng-model="jobname"
+                       required />
+                <span class="k-invalid-msg" data-for="Job Name"></span>
+            </p>
+            <p>
+                <label for="start" class="k-request-retry">Start</label>
+                <input kendo-date-time-picker id="start" name="Start"
+                       ng-model="startStr" k-ng-model="start"
+                       required />
+                <span class="k-invalid-msg" data-for="Start"></span>
+            </p>
+            <p>
+                <label for="end" class="k-request-retry">End</label>
+                <input kendo-date-time-picker id="end" name="End"
+                       ng-model="endStr" k-ng-model="end"
+                       required data-greater-date-msg="End date should be later than start date."/>
+                <span class="k-invalid-msg" data-for="End" ></span>
+            </p>
+            <p>
+                <label for="waveCount" class="k-request-retry">Wave count</label>
+                <input kendo-numeric-text-box k-options="waveCountOptions" id="waveCount" name="Wave count"
+                       k-ng-model="wavecount"
+                       required data-max-msg="{0} must between 1 and 100" />
+                <span class="k-invalid-msg" data-for="Wave count" ></span>
+            </p>
+
+            <p>
+                <input type="button" class="k-button k-primary" value="Submit" data-ng-click="validate($event)" />
+            </p>
+            <p>
+                {{validationMessage}}
+            </p>
+        </div>
+        <div>
+            <p>
+                Job Name: {{jobname}}
+            </p>
+            <p>
+                Start: {{startStr}} -- {{start}}
+            </p>
+            <p>
+                End: {{endStr}} -- {{end}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
