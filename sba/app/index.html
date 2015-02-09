@@ -19,60 +19,46 @@
 
     <style scoped>
         .popover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1060;
-            display: none;
-            max-width: 276px;
-            padding: 1px;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            line-height: 1.42857143;
-            text-align: left;
-            white-space: normal;
-            background-color: #fff;
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-            border: 1px solid #ccc;
-            border: 1px solid rgba(0, 0, 0, .2);
-            border-radius: 6px;
-            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            max-width: 600px;
         }
     </style>
 </head>
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
-    <form name="form">
+    <form novalidate name="form">
         <div class="form-group has-feedback"
              style="width: 400px;"
-             data-ng-class="{ 'has-error': form.uName.$dirty && form.uName.$invalid }">
+             data-ng-class="{
+                'has-error': form.uName.$dirty && form.uName.$invalid,
+                'has-success': form.uName.$dirty && form.uName.$valid,
+                'has-warning': form.uName.$dirty && form.uName.$pending
+            }">
             <label class="control-label" for="uName">Name:</label>
             <input type="text"
                    class="form-control"
                    id="uName"
-                   name= "uName"
+                   name="uName"
                    required
                    minlength=5
+                   must-contains-space
+                   not-duplicated
                    data-ng-model="user.name"
                    data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
-                   popover="{{getErrorMessage('uName')}}"
+                   popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
                    popover-trigger="mouseenter"
                    popover-placement="bottom" />
+            <span class="glyphicon glyphicon-ok form-control-feedback"
+                  ng-show="form.uName.$dirty && form.uName.$valid"></span>
             <span class="glyphicon glyphicon-remove form-control-feedback"
                   ng-show="form.uName.$dirty && form.uName.$invalid"></span>
+            <span class="glyphicon glyphicon-refresh form-control-feedback"
+                  ng-show="form.uName.$dirty && form.uName.$pending"></span>
         </div>
-    </form>
-    <pre>{{getErrorMessage('uName')}}</pre>
-    <pre>{{form.uName | json }}</pre>
-    <pre>username = "{{user.name}}"</pre>
 
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+        <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">
+    </form>
+    <pre>{{getErrorMessage('uName', form.uName.$viewValue)}}</pre>
+    <pre>{{form | json }}</pre>
+    <pre>username = "{{user.name}}"</pre>
 
 </body>
 </html>
