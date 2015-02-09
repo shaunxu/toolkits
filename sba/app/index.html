@@ -23,15 +23,33 @@
         }
     </style>
 </head>
+
+<!--
+             data-ng-class="{
+                    'has-error': form.uName.$dirty && form.uName.$invalid,
+                    'has-success': form.uName.$dirty && form.uName.$valid,
+                    'has-warning': form.uName.$dirty && form.uName.$pending
+                    }"
+
+                    sb-validation-icon form-name="form" model-name="uName"
+
+                    ng-class="getValidationBorderNgClass(form.uName)"
+
+            <span class="glyphicon glyphicon-ok form-control-feedback"
+                  ng-show="form.uName.$dirty && form.uName.$valid"></span>
+            <span class="glyphicon glyphicon-remove form-control-feedback"
+                  ng-show="form.uName.$dirty && form.uName.$invalid"></span>
+            <span class="glyphicon glyphicon-refresh form-control-feedback"
+                  ng-show="form.uName.$dirty && form.uName.$pending"></span>
+
+                  <sb-validation-icon form-model="form.uName"></sb-validation-icon>
+-->
+
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
     <form novalidate name="form">
         <div class="form-group has-feedback"
              style="width: 400px;"
-             data-ng-class="{
-                'has-error': form.uName.$dirty && form.uName.$invalid,
-                'has-success': form.uName.$dirty && form.uName.$valid,
-                'has-warning': form.uName.$dirty && form.uName.$pending
-            }">
+             sb-validation-border form-model="form.uName">
             <label class="control-label" for="uName">Name:</label>
             <input type="text"
                    class="form-control"
@@ -46,12 +64,7 @@
                    popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
                    popover-trigger="mouseenter"
                    popover-placement="bottom" />
-            <span class="glyphicon glyphicon-ok form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$valid"></span>
-            <span class="glyphicon glyphicon-remove form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$invalid"></span>
-            <span class="glyphicon glyphicon-refresh form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$pending"></span>
+            <sb-validation-icon form-model="form.uName"></sb-validation-icon>
         </div>
 
         <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">

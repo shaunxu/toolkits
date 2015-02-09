@@ -2,350 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7777c334-7497-4a64-8234-2d5f653f2cbd" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\ui-bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-bootstrap\ui-bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\angular-messages.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\angular-messages.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\angular-messages.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-messages\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\common\ieshiv\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\common\ieshiv\ieshiv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\common\module.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\common\stylesheets\angular-ui.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\common\stylesheets\mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\grunt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\animate\animate.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\animate\test\animateSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\calendar\calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\calendar\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\calendar\test\calendarSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\codemirror\codemirror.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\codemirror\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\codemirror\test\codemirrorSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\currency\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\currency\currency.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\currency\stylesheets\currency.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\currency\test\currencySpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\date\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\date\date.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\date\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\date\test\dateSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\event\event.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\event\test\eventSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\if\if.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\if\test\ifSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\jq\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\jq\jq.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\jq\test\jqSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\keypress\keypress.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\keypress\test\keydownSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\keypress\test\keypressSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\keypress\test\keyupSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\map\map.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\map\test\mapSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\mask\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\mask\mask.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\mask\test\maskSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\reset\reset.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\reset\stylesheets\reset.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\reset\test\resetSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\route\route.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\route\test\routeSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\scrollfix\scrollfix.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\scrollfix\test\scrollfixSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\select2\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\select2\select2.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\select2\test\select2Spec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\showhide\showhide.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\showhide\test\showhideSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\sortable\REDME.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\sortable\sortable.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\sortable\test\sortableSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\tinymce\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\tinymce\test\tinymceSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\tinymce\tinymce.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\validate\test\validateSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\directives\validate\validate.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\format\format.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\format\test\formatSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\highlight\highlight.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\highlight\highlight.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\highlight\test\highlightSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\inflector\inflector.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\inflector\test\inflectorSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\unique\test\uniqueSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\modules\filters\unique\unique.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\templates\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\templates\dependencies.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\templates\stylesheets\template.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\templates\template.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\templates\test\templateSpec.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\angular-1.0.1\angular-mocks.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\angular-1.0.1\angular.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\angular\angular-1.0.0rc4.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\angular\angular-1.0.0rc5.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\angular\angular-mocks.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\bootstrap\bootstrap-modal.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\calendar\calendar.js.min" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\codemirror\codemirror.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\googlemaps\googlemaps.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\jquery\jquery-1.7.2.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\jquery\jquery-ui-1.8.18.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\maskedinput\jquery.maskedinput-1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\select2\select2.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\tinymce\jquery.tinymce.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\lib\tinymce\tiny_mce.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular-ui\test\test-config.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\angular-csp.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\angular.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\angular.min.js.gzip" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\angular.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\angular\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\bs-commonjs-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\bs-raw-files-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\configBridge.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\grunt\sauce_browsers.yml" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\affix.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\alert.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\button.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\modal.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\popover.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\tab.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\js\transition.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\.csscomb.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\.csslintrc" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\badges.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\bootstrap.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\breadcrumbs.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\button-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\carousel.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\close.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\code.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\component-animations.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\dropdowns.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\forms.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\glyphicons.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\grid.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\input-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\jumbotron.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\labels.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\media.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\background-variant.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\border-radius.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\center-block.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\clearfix.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\forms.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\gradients.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\grid-framework.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\grid.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\hide-text.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\image.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\labels.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\nav-divider.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\nav-vertical-align.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\opacity.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\panels.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\progress-bar.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\reset-filter.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\resize.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\responsive-visibility.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\size.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\tab-focus.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\table-row.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\text-emphasis.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\text-overflow.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\mixins\vendor-prefixes.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\modals.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\navs.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\pager.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\panels.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\popovers.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\print.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\progress-bars.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\responsive-embed.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\responsive-utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\scaffolding.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\tables.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\theme.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\thumbnails.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\tooltip.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\type.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\variables.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\less\wells.less" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\bootstrap\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\MIT-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\jsonp.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\load.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\parseJSON.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\parseXML.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\script.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\ajax\xhr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes\attr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes\classes.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes\prop.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes\support.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\attributes\val.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\callbacks.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\core.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\core\access.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\core\init.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\core\parseHTML.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\core\ready.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\addGetHookIf.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\curCSS.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\defaultDisplay.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\hiddenVisibleSelectors.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\support.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\css\swap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\data.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\data\Data.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\data\accepts.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\deferred.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\deprecated.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\dimensions.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\effects.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\effects\Tween.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\effects\animatedSelector.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\event.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\event\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\event\alias.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\event\support.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\exports\amd.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\exports\global.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\intro.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\manipulation.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\manipulation\_evalUrl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\manipulation\support.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\offset.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\outro.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\queue.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\queue\delay.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\selector-native.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\selector-sizzle.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\selector.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\serialize.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\traversing.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\traversing\findFilter.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\app\bower_components\jquery\src\wrap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\HISTORY.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\History.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\Makefile" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\SOURCES.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\component.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\lib\custom.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\lib\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\lib\mime.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\lib\node.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\mime-types\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\lib\charset.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\lib\encoding.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\lib\language.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\lib\mediaType.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\lib\negotiator.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\node_modules\negotiator\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\accepts\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\History.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\Makefile" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\component.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\bytes\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\compressible\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\compressible\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\compressible\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\compressible\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\compressible\specifications.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\History.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\on-headers\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\History.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\node_modules\vary\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\github\toolkits\sba\node_modules\compression\package.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower.json" afterPath="$PROJECT_DIR$/app/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sba.iml" afterPath="$PROJECT_DIR$/.idea/sba.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sba.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -369,34 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35055867" vertical-offset="293" max-vertical-offset="1173">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="697" max-vertical-offset="1394">
+              <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1423460444352" expanded="true" signature="1178:1407" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
+      <file leaf-file-name="angular-messages.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-messages/angular-messages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1989">
-              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6101" max-vertical-offset="6902">
+              <caret line="296" column="37" selection-start-line="296" selection-start-column="37" selection-end-line="296" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-ui.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-ui/build/angular-ui.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="21431" max-vertical-offset="24939">
-              <caret line="1286" column="11" selection-start-line="1286" selection-start-column="11" selection-end-line="1286" selection-end-column="11" />
+            <state vertical-scroll-proportion="2.8913386" vertical-offset="153" max-vertical-offset="3196">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -410,8 +67,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/app.js" />
       </list>
     </option>
   </component>
@@ -530,6 +187,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -612,13 +291,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11392405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11392405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22074789" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22209436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22209436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -658,7 +337,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1423460444352" expanded="true" signature="1178:1407" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -685,7 +363,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1423460444352" expanded="true" signature="1178:1407" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -752,22 +429,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1989">
-          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.26" vertical-offset="349100" max-vertical-offset="444295">
+          <caret line="20546" column="17" selection-start-line="20546" selection-start-column="10" selection-end-line="20546" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35055867" vertical-offset="293" max-vertical-offset="1173">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="697" max-vertical-offset="1394">
+          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1423460444352" expanded="true" signature="1178:1407" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-messages/angular-messages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6101" max-vertical-offset="6902">
+          <caret line="296" column="37" selection-start-line="296" selection-start-column="37" selection-end-line="296" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8913386" vertical-offset="153" max-vertical-offset="3196">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

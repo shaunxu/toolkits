@@ -4,6 +4,14 @@
         .module('customTriggerExample', ['ngMessages', 'ui.bootstrap', 'ui.directives'])
         .controller('ExampleController', ['$scope', '$timeout', '$q', function($scope, $timeout, $q) {
 
+            //$scope.getValidationIconNgClass = function (ctrl) {
+            //    return {
+            //        'has-error': ctrl.$dirty && ctrl.$invalid,
+            //        'has-success': ctrl.$dirty && ctrl.$valid,
+            //        'has-warning': ctrl.$dirty && ctrl.$pending
+            //    };
+            //};
+
             $scope.getErrorMessage = function (name, value) {
                 var control = $scope.form[name];
                 if (control) {
@@ -98,7 +106,62 @@
                 }
             };
         })
-        .run(function () {
+        .directive('sbValidation', function ($compile) {
+            return {
+                restrict: 'A',
+                compile: function () {
+                    return function ($scope, $element, $attr) {
+                        var name = $attr['name'];
+                        var errorMessages = $attr['errorMessages'];
+                        var form = $attr['formName'];
+                        var messages = $scope[errorMessages][name];
+
+                        $element.removeAttr('sb-validation');
+                        $element.removeAttr('x-sb-validation');
+                        $element.removeAttr('data-sb-validation');
+                    };
+                }
+            };
+        })
+        .directive('sbValidationBorder', function ($compile) {
+            return {
+                restrict: 'A',
+                compile: function () {
+                    return function ($scope, $element, $attr) {
+                        var formModel = $attr['formModel'];
+                        var term =
+                            '{' +
+                                '\'has-error\':' + formModel + '.$dirty && ' + formModel + '.$invalid,' +
+                                '\'has-success\':' + formModel + '.$dirty && ' + formModel + '.$valid,' +
+                                '\'has-warning\':' + formModel + '.$dirty && ' + formModel + '.$pending' +
+                            '}';
+                        $element.attr('data-ng-class', term);
+                        $element.removeAttr('sb-validation-border');
+                        $element.removeAttr('x-sb-validation-border');
+                        $element.removeAttr('data-sb-validation-border');
+                        var e = $compile($element)($scope);
+                        $element.replaceWith(e);
+                    };
+                }
+            };
+        })
+        .directive('sbValidationIcon', function ($compile) {
+            return {
+                restrict: 'E',
+                compile: function () {
+                    return function ($scope, $element, $attr) {
+                        var formModel = $attr['formModel'];
+                        var html =
+                            '<span class="glyphicon glyphicon-ok form-control-feedback" ng-show="' + formModel + '.$dirty && ' + formModel + '.$valid"></span>' +
+                            '<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="' + formModel + '.$dirty && ' + formModel + '.$invalid"></span>' +
+                            '<span class="glyphicon glyphicon-refresh form-control-feedback" ng-show="' + formModel + '.$dirty && ' + formModel + '.$pending"></span>';
+                        var e = $compile(html)($scope);
+                        $element.replaceWith(e);
+                    };
+                }
+            };
+        })
+        .run(function ($rootScope) {
             if (!String.prototype.format) {
                 String.prototype.format = function() {
                     var args = arguments;
@@ -108,5 +171,13 @@
                     return result;
                 };
             }
+
+            $rootScope.getValidationBorderNgClass = function (ctrl) {
+                return {
+                    'has-error': ctrl.$dirty && ctrl.$invalid,
+                    'has-success': ctrl.$dirty && ctrl.$valid,
+                    'has-warning': ctrl.$dirty && ctrl.$pending
+                };
+            };
         });
 })(window.angular);
