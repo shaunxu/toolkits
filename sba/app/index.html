@@ -19,7 +19,48 @@
 
     <style scoped>
         .popover {
+            min-width: 200px;
             max-width: 600px;
+        }
+
+        .has-error {
+            border-color: #a94442;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        }
+        .has-error:focus {
+            border-color: #843534;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+        }
+        .has-error-icon {
+            color: #a94442;
+        }
+        .has-warning {
+            border-color: #8a6d3b;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        }
+        .has-warning:focus {
+            border-color: #66512c;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #c0a16b;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #c0a16b;
+        }
+        .has-warning-icon {
+            color: #8a6d3b;
+        }
+        .has-success {
+            border-color: #3c763d;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        }
+        .has-success:focus {
+            border-color: #2b542c;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+        }
+        .has-success-icon {
+            color: #3c763d;
         }
     </style>
 </head>
@@ -43,28 +84,31 @@
                   ng-show="form.uName.$dirty && form.uName.$pending"></span>
 
                   <sb-validation-icon form-model="form.uName"></sb-validation-icon>
+                  <sb-validation-icon form-model="form.uName"></sb-validation-icon>
+
+                   required
+                   minlength=5
+                   must-contains-space
+                   not-duplicated
+
 -->
 
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
     <form novalidate name="form">
         <div class="form-group has-feedback"
-             style="width: 400px;"
-             sb-validation-border form-model="form.uName">
+             style="width: 400px;">
             <label class="control-label" for="uName">Name:</label>
             <input type="text"
                    class="form-control"
                    id="uName"
                    name="uName"
-                   required
-                   minlength=5
-                   must-contains-space
-                   not-duplicated
                    data-ng-model="user.name"
                    data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
-                   popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
-                   popover-trigger="mouseenter"
-                   popover-placement="bottom" />
-            <sb-validation-icon form-model="form.uName"></sb-validation-icon>
+                   must-contains-space
+                   required
+                   minlength=5
+                   sb-validation="uNameValidators" in-form="form"
+                   popover="{{getErrorMessage('uName', form.uName.$viewValue)}}" />
         </div>
 
         <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">
