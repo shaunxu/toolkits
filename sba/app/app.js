@@ -100,7 +100,7 @@
                             });
                             var errorMessage = errorMessages[validatorName] || validatorName;
                             var stringFormat = function(format) {
-                                var args = arguments;
+                                var args = Array.prototype.slice.call(arguments, 1);
                                 var result = format.replace(/{(\d+)}/g, function (match, number) {
                                     return typeof args[number] != 'undefined' ? args[number] : match;
                                 });
