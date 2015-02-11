@@ -1,47 +1,8 @@
 (function(angular) {
     'use strict';
     angular
-        .module('customTriggerExample', ['ngMessages', 'ui.bootstrap', 'ui.directives'])
-        .controller('ExampleController', ['$scope', '$timeout', '$q', function($scope, $timeout, $q) {
-
-            //$scope.getValidationIconNgClass = function (ctrl) {
-            //    return {
-            //        'has-error': ctrl.$dirty && ctrl.$invalid,
-            //        'has-success': ctrl.$dirty && ctrl.$valid,
-            //        'has-warning': ctrl.$dirty && ctrl.$pending
-            //    };
-            //};
-
-            $scope.getErrorMessage = function (name, value) {
-                var control = $scope.form[name];
-                if (control) {
-                    if (control.$dirty && control.$invalid) {
-                        var message = '';
-                        Object.getOwnPropertyNames(control.$error).forEach(function (key) {
-                            if ($scope.errorMessages[name][key]) {
-                                message = $scope.errorMessages[name][key];
-                            }
-                        });
-                        message = message.format(value);
-                        return message;
-                    }
-                    else {
-                        return undefined;
-                    }
-                }
-                else {
-                    return undefined;
-                }
-            };
-
-            $scope.errorMessages = {
-                'uName': {
-                    'required': 'Name is missing.',
-                    'minlength': 'Name ({0}) must be more than 5 chars.',
-                    'mustContainsSpace': 'Name ({0}) must contain at lease one space.',
-                    'notDuplicated': 'Name ({0}) was duplicated.'
-                }
-            };
+        .module('customTriggerExample', [])
+        .controller('ExampleController', ['$scope', '$timeout', '$q', function($scope) {
 
             $scope.names = [
                 'Shaun Xu',
@@ -58,64 +19,6 @@
                     alert('Something wrong. You need to fix it.');
                 }
             };
-
-            //$scope.uNameValidators = {
-            //    'required': {
-            //        'value': null,
-            //        'async': false,
-            //        'fn': null,
-            //        'message': 'Name is missing.'
-            //    },
-            //    'minlength': {
-            //        'value': 5,
-            //        'async': false,
-            //        'fn': null,
-            //        'message': 'Name must be more than 5 chars.'
-            //    },
-            //    'mustContainsSpace': {
-            //        'value': null,
-            //        'async': false,
-            //        'fn': function (ctrl, scope, q, modelValue, viewValue) {
-            //            if (ctrl.$isEmpty(modelValue)) {
-            //                // consider empty models to be valid
-            //                return true;
-            //            }
-            //            if (modelValue.indexOf(' ') > 0) {
-            //                return true;
-            //            }
-            //            else {
-            //                return false;
-            //            }
-            //        },
-            //        'message': 'Name must contain at lease one space.'
-            //    },
-            //    'notDuplicated': {
-            //        'value': null,
-            //        'async': true,
-            //        'fn': function (ctrl, scope, q, modelValue, viewValue) {
-            //            if (ctrl.$isEmpty(modelValue)) {
-            //                // consider empty model valid
-            //                return q.when();
-            //            }
-            //
-            //            var def = q.defer();
-            //
-            //            $timeout(function() {
-            //                // Mock a delayed response
-            //                if (scope.names.indexOf(modelValue) === -1) {
-            //                    // The username is available
-            //                    def.resolve();
-            //                } else {
-            //                    def.reject();
-            //                }
-            //
-            //            }, 2000);
-            //
-            //            return def.promise;
-            //        },
-            //        'message': 'Name must contain at lease one space.'
-            //    }
-            //};
         }])
         .directive('mustContainsSpace', function () {
             return {
@@ -177,18 +80,6 @@
                     var ctrl = ctrls[0];
                     var form = ctrls[1];
                     var formModel = form.$name + '.' + ctrl.$name;
-                    //var ngClass = ''
-                    //    + '{'
-                    //    + '\'has-error\':' + formModel + '.$dirty && ' + formModel + '.$invalid,'
-                    //    + '\'has-success\':' + formModel + '.$dirty && ' + formModel + '.$valid,'
-                    //    + '\'has-warning\':' + formModel + '.$dirty && ' + formModel + '.$pending'
-                    //    + '}';
-                    //element.attr('data-ng-class', ngClass);
-                    //element.attr('popover-trigger', 'mouseover');
-                    //element.attr('popover-placement', 'right');
-                    //element.removeAttr('sb-validation');
-                    //element.removeAttr('x-sb-validation');
-                    //element.removeAttr('data-sb-validation');
 
                     var errorMessages = {};
                     var errorMessageAttributeProfixing = 'sbErrorMessage';
@@ -199,12 +90,32 @@
                             errorMessages[validatorName] = attrs[attrName];
                         }
                     });
-
-                    console.log(errorMessages);
+                    var getErrorMessage = function () {
+                        if (ctrl.$dirty) {
+                            var validatorName = null;
+                            Object.getOwnPropertyNames(ctrl.$error).forEach(function (vn) {
+                                if (!validatorName && !!ctrl.$error[vn]) {
+                                    validatorName = vn;
+                                }
+                            });
+                            var errorMessage = errorMessages[validatorName] || validatorName;
+                            var stringFormat = function(format) {
+                                var args = arguments;
+                                var result = format.replace(/{(\d+)}/g, function (match, number) {
+                                    return typeof args[number] != 'undefined' ? args[number] : match;
+                                });
+                                return result;
+                            };
+                            return stringFormat(errorMessage, ctrl.$name, ctrl.$viewValue);
+                        }
+                        else {
+                            return null;
+                        }
+                    };
 
                     element.popover({
                         content: function () {
-                            return scope.getErrorMessage(ctrl.$name, ctrl.$viewValue);
+                            return getErrorMessage();
                         },
                         placement: 'right',
                         trigger: 'hover'
@@ -213,50 +124,32 @@
                     scope.$watch(
                         function (scope) {
                             var model = scope[form.$name][ctrl.$name];
-
                             if (model.$dirty) {
                                 if (model.$valid) {
-                                    return 0; // success
+                                    return 'has-success'; // success
                                 }
                                 else if (model.$pending) {
-                                    return 1; // pending
+                                    return 'has-warning'; // pending
                                 }
                                 else if (model.$invalid) {
-                                    return -1; // error
+                                    return 'has-error'; // error
                                 }
                                 else {
-                                    return 0; // success
+                                    return 'has-success'; // success
                                 }
                             }
                             else {
-                                return 65535; // origin
+                                return null; // origin
                             }
                         },
-                        function (value) {
+                        function (css) {
                             attrs.$removeClass('has-error');
                             attrs.$removeClass('has-success');
                             attrs.$removeClass('has-warning');
-                            switch (value) {
-                                case -1: // error
-                                    attrs.$addClass('has-error');
-                                    break;
-                                case 1: // pending
-                                    attrs.$addClass('has-warning');
-                                    break;
-                                default : // success
-                                    attrs.$addClass('has-success');
-                                    break;
+                            if (css) {
+                                attrs.$addClass(css);
                             }
                         });
-
-                    //$compile(element)(scope);
-
-                    //console.log(element.contents());
-                    //var e = $compile(element.contents())(scope);
-                    //console.log(e[0].outerHTML);
-
-                    //element.replaceWith($compile(element)(scope));
-                    //element.replaceWith(element);
 
                     var spanHtml = ''
                         + '<span class="glyphicon glyphicon-ok form-control-feedback has-success-icon" ng-show="' + formModel + '.$dirty && ' + formModel + '.$valid"></span>'
@@ -265,16 +158,5 @@
                     element.parent().append($compile(spanHtml)(scope));
                 }
             };
-        })
-        .run(function ($rootScope) {
-            if (!String.prototype.format) {
-                String.prototype.format = function() {
-                    var args = arguments;
-                    var result = this.replace(/{(\d+)}/g, function(match, number) {
-                        return typeof args[number] != 'undefined' ? args[number] : match;
-                    });
-                    return result;
-                };
-            }
         });
 })(window.angular);
