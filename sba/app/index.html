@@ -88,9 +88,8 @@
 
                    required
                    minlength=5
-                   must-contains-space
-                   not-duplicated
 
+popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
 -->
 
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
@@ -104,11 +103,15 @@
                    name="uName"
                    data-ng-model="user.name"
                    data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
-                   must-contains-space
                    required
                    minlength=5
-                   sb-validation="uNameValidators" in-form="form"
-                   popover="{{getErrorMessage('uName', form.uName.$viewValue)}}" />
+                   must-contains-space
+                   not-duplicated
+                   sb-error-message-required="Name is required."
+                   sb-error-message-minlength="Name must equal or more than 5 chars."
+                   sb-error-message-must-contains-space="Name must contain at least one space."
+                   sb-error-message-not-duplicated="Name was duplicated on the server."
+                   sb-validation />
         </div>
 
         <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">
