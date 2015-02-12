@@ -30,9 +30,6 @@
                             return true;
                         }
                         if (modelValue.indexOf(' ') > 0) {
-                            console.log(modelValue);
-                            console.log('pass');
-                            console.log(ctrl);
                             return true;
                         }
                         else {
