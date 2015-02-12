@@ -9,6 +9,10 @@
                 'Job 3'
             ];
 
+            $scope.waveCountInputOptions = {
+                format: '#'
+            };
+
             $scope.job = {};
 
             $scope.submit = function (event) {
@@ -29,22 +33,25 @@
                 }
             };
         }])
-        .directive('mustContainsSpace', function () {
+        .directive('endMustGreaterThanStart', function () {
             return {
                 require: 'ngModel',
                 link: function(scope, elm, attrs, ctrl) {
-                    ctrl.$validators.mustContainsSpace = function (modelValue, viewValue) {
-                        if (ctrl.$isEmpty(modelValue)) {
-                            // consider empty models to be valid
+                    ctrl.$validators.endMustGreaterThanStart = function (value) {
+                        if (ctrl.$isEmpty(value)) {
                             return true;
                         }
-                        if (modelValue.indexOf(' ') > 0) {
+                        else if (ctrl.$isEmpty(scope.job.start)) {
                             return true;
                         }
                         else {
-                            return false;
+                            return value > scope.job.start;
                         }
                     };
+
+                    scope.$watch('job.start', function () {
+                        ctrl.$validate();
+                    });
                 }
             };
         })
