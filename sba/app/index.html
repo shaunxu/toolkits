@@ -6,6 +6,10 @@
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css" />
+    <link rel="stylesheet" href="lib/kendo.common.min.css" />
+    <link rel="stylesheet" href="lib/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="lib/kendo.default.min.css" />
+    <link rel="stylesheet" href="lib/kendo.material.min.css" />
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -14,6 +18,8 @@
     <script src="bower_components/angular-ui/build/angular-ui.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <script src="lib/kendo.all.min.js"></script>
 
     <script src="sb-validation/sb-validation.js"></script>
     <script src="app.js"></script>
@@ -65,58 +71,51 @@
         }
     </style>
 </head>
-
 <!--
-             data-ng-class="{
-                    'has-error': form.uName.$dirty && form.uName.$invalid,
-                    'has-success': form.uName.$dirty && form.uName.$valid,
-                    'has-warning': form.uName.$dirty && form.uName.$pending
-                    }"
+                   data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
 
-                    sb-validation-icon form-name="form" model-name="uName"
-
-                    ng-class="getValidationBorderNgClass(form.uName)"
-
-            <span class="glyphicon glyphicon-ok form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$valid"></span>
-            <span class="glyphicon glyphicon-remove form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$invalid"></span>
-            <span class="glyphicon glyphicon-refresh form-control-feedback"
-                  ng-show="form.uName.$dirty && form.uName.$pending"></span>
-
-                  <sb-validation-icon form-model="form.uName"></sb-validation-icon>
-                  <sb-validation-icon form-model="form.uName"></sb-validation-icon>
-
-                   required
-                   minlength=5
-
-                   sb-error-message-required="This field is required."
-                   sb-error-message-minlength="This field must contains at least {1} chars."
-
-popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
 -->
-
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
-    <form novalidate name="form">
-        <div class="form-group has-feedback"
-             style="width: 400px;">
-            <label class="control-label" for="uName">Name:</label>
+    <form novalidate name="form" data-ng-submit="submit($event)">
+        <div class="form-group has-feedback" style="width: 400px;">
+            <label class="control-label" for="jobName">Job Name:</label>
             <input type="text"
                    class="form-control"
-                   id="uName"
-                   name="uName"
-                   data-ng-model="user.name"
+                   id="jobName"
+                   name="jobName"
+                   data-ng-model="job.name"
                    data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
                    required
-                   minlength=5
-                   must-contains-space
+                   minlength="3"
+                   maxlength="20"
                    not-duplicated
-                   sb-error-message-must-contains-space="{0} must contain at least one space."
                    sb-error-message-not-duplicated="{0} was duplicated on the server."
                    sb-validation />
         </div>
+        <div class="form-group has-feedback" style="width: 400px;">
+            <label class="control-label" for="jobDescription">Job Description:</label>
+            <input type="text"
+                   class="form-control"
+                   id="jobDescription"
+                   name="jobDescription"
+                   data-ng-model="job.description"
+                   data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
+                   maxlength="10"
+                   sb-validation />
+        </div>
+        <div class="form-group has-feedback" style="width: 400px;">
+            <label class="control-label" for="start">Start:</label>
+            <input kendo-date-time-picker
+                   class="form-control"
+                   id="start"
+                   name="start"
+                   data-ng-model="job.startStr"
+                   k-ng-model="job.start"
+                   required
+                   sb-validation />
+        </div>
 
-        <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">
+        <input class="btn btn-default" type="submit" value="Submit">
     </form>
     <pre>{{form | json }}</pre>
     <pre>username = "{{user.name}}"</pre>

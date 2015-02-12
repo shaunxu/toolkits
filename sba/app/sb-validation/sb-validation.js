@@ -9,7 +9,7 @@ angular.module('sb.validation', [])
             },
             styles: {
                 error: 'has-error',
-                success: 'has-has-success',
+                success: 'has-success',
                 pending: 'has-warning'
             },
             messages: {
@@ -49,7 +49,7 @@ angular.module('sb.validation', [])
         'use strict';
         return {
             restrict: 'A',
-            require: ['ngModel', '^form'],
+            require: ['ngModel', '^?form'],
             priority: 0,
             terminal: true,
             link: function (scope, element, attrs, ctrls) {
@@ -81,7 +81,7 @@ angular.module('sb.validation', [])
                     }
                 });
                 var getErrorMessage = function () {
-                    if (ngModelCtrl.$dirty) {
+                    if (ngFormCtrl.$submitted || ngModelCtrl.$dirty) {
                         var validatorName = null;
                         Object.getOwnPropertyNames(ngModelCtrl.$error).forEach(function (vn) {
                             if (!validatorName && !!ngModelCtrl.$error[vn]) {
@@ -90,10 +90,15 @@ angular.module('sb.validation', [])
                         });
                         var errorMessage = messages[validatorName] || { content: validatorName, value: '' };
                         var stringFormat = function(format) {
-                            var args = Array.prototype.slice.call(arguments, 1);
-                            return format.replace(/{(\d+)}/g, function (match, number) {
-                                return typeof args[number] != 'undefined' ? args[number] : match;
-                            });
+                            if (format) {
+                                var args = Array.prototype.slice.call(arguments, 1);
+                                return format.replace(/{(\d+)}/g, function (match, number) {
+                                    return typeof args[number] != 'undefined' ? args[number] : match;
+                                });
+                            }
+                            else {
+                                return null;
+                            }
                         };
                         return stringFormat(errorMessage.content, ngModelCtrl.$name, errorMessage.value, ngModelCtrl.$viewValue);
                     }
@@ -111,16 +116,15 @@ angular.module('sb.validation', [])
                 });
 
                 scope.$watch(
-                    function (scope) {
-                        var model = scope[ngFormCtrl.$name][ngModelCtrl.$name];
-                        if (model.$dirty) {
-                            if (model.$valid) {
+                    function () {
+                        if (ngFormCtrl.$submitted || ngModelCtrl.$dirty) {
+                            if (ngModelCtrl.$valid) {
                                 return sbValidationOptions.styles.success; // success
                             }
-                            else if (model.$pending) {
+                            else if (ngModelCtrl.$pending) {
                                 return sbValidationOptions.styles.pending; // pending
                             }
-                            else if (model.$invalid) {
+                            else if (ngModelCtrl.$invalid) {
                                 return sbValidationOptions.styles.error; // error
                             }
                             else {
@@ -141,9 +145,12 @@ angular.module('sb.validation', [])
                     });
 
                 var spanHtml = ''
-                    + '<span class="glyphicon glyphicon-ok form-control-feedback has-success-icon" ng-show="' + modelFullName + '.$dirty && ' + modelFullName + '.$valid"></span>'
-                    + '<span class="glyphicon glyphicon-remove form-control-feedback has-error-icon" ng-show="' + modelFullName + '.$dirty && ' + modelFullName + '.$invalid"></span>'
-                    + '<span class="glyphicon glyphicon-refresh form-control-feedback has-warning-icon" ng-show="' + modelFullName + '.$dirty && ' + modelFullName + '.$pending"></span>';
+                    + '<span class="glyphicon glyphicon-ok form-control-feedback has-success-icon"'
+                    + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$valid"></span>'
+                    + '<span class="glyphicon glyphicon-remove form-control-feedback has-error-icon"'
+                    + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$invalid"></span>'
+                    + '<span class="glyphicon glyphicon-refresh form-control-feedback has-warning-icon"'
+                    + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$pending"></span>';
                 element.parent().append($compile(spanHtml)(scope));
             }
         };
