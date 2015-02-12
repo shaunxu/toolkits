@@ -15,6 +15,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
+    <script src="sb-validation/sb-validation.js"></script>
     <script src="app.js"></script>
 
     <style scoped>
@@ -89,6 +90,9 @@
                    required
                    minlength=5
 
+                   sb-error-message-required="This field is required."
+                   sb-error-message-minlength="This field must contains at least {1} chars."
+
 popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
 -->
 
@@ -107,8 +111,6 @@ popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
                    minlength=5
                    must-contains-space
                    not-duplicated
-                   sb-error-message-required="{0} is required."
-                   sb-error-message-minlength="{0} must equal or more than 5 chars."
                    sb-error-message-must-contains-space="{0} must contain at least one space."
                    sb-error-message-not-duplicated="{0} was duplicated on the server."
                    sb-validation />
@@ -116,7 +118,6 @@ popover="{{getErrorMessage('uName', form.uName.$viewValue)}}"
 
         <input class="btn btn-default" type="submit" value="Submit" ng-click="submit($event)">
     </form>
-    <pre>{{getErrorMessage('uName', form.uName.$viewValue)}}</pre>
     <pre>{{form | json }}</pre>
     <pre>username = "{{user.name}}"</pre>
 
