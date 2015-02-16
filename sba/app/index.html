@@ -76,85 +76,51 @@
 
 -->
 <body ng-app="customTriggerExample" ng-controller="ExampleController" >
-    <form novalidate name="form" data-ng-submit="submit($event)">
-        <div class="form-group has-feedback" style="width: 400px;">
-            <label class="control-label" for="jobName">Job Name:</label>
-            <input type="text"
-                   class="form-control"
-                   id="jobName"
-                   name="jobName"
-                   data-ng-model="job.name"
-                   data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
-                   required
-                   minlength="3"
-                   maxlength="20"
-                   not-duplicated
-                   sb-error-message-not-duplicated="{0} was duplicated on the server."
-                   sb-validation />
+    <form novalidate class="form-horizontal" role="form" name="loginForm" data-ng-submit="login($event)" style="margin-top: 8em; width: 50%;">
+        <div class="form-group has-feedback">
+            <label for="username" class="col-sm-3 control-label">User name</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="username" name="username" placeholder="User name"
+                       data-ng-model="user.username"
+                       required
+                       auth-failed
+                       sb-error-message-auth-failed="Login failed due to username or password invalid."
+                       sb-validation>
+            </div>
         </div>
-        <div class="form-group has-feedback" style="width: 400px;">
-            <label class="control-label" for="jobDescription">Job Description:</label>
-            <input type="text"
-                   class="form-control"
-                   id="jobDescription"
-                   name="jobDescription"
-                   data-ng-model="job.description"
-                   data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
-                   maxlength="10"
-                   sb-validation />
+        <div class="form-group has-feedback">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password"
+                       class="form-control"
+                       id="password" name="password" placeholder="Password"
+                       data-ng-model="user.password"
+                       required
+                       sb-validation>
+            </div>
         </div>
-        <div class="form-group has-feedback" style="width: 400px;">
-            <label class="control-label" for="start">Start:</label>
-            <input kendo-date-time-picker
-                   class="form-control"
-                   id="start"
-                   name="start"
-                   data-ng-model="job.startStr"
-                   k-ng-model="job.start"
-                   required
-                   sb-validation />
+        <div class="form-group has-feedback">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               id="rememberUserName" name="rememberUserName"
+                               data-ng-model="user.rememberUserName"> Remember my user name
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="form-group has-feedback" style="width: 400px;">
-            <label class="control-label" for="end">End:</label>
-            <input kendo-date-time-picker
-                   class="form-control"
-                   id="end"
-                   name="end"
-                   data-ng-model="job.endStr"
-                   k-ng-model="job.end"
-                   required
-                   end-must-greater-than-start
-                   sb-error-message-end-must-greater-than-start="The end date must be greater than the start date."
-                   sb-validation />
+        <div class="form-group has-feedback">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
         </div>
-        <div class="form-group has-feedback" style="width: 400px;">
-            <label class="control-label" for="waveCount">Wave count:</label>
-            <input kendo-numeric-text-box
-                   class="form-control"
-                   id="waveCount"
-                   name="waveCount"
-                   k-min="0"
-                   k-max="100"
-                   k-options="waveCountInputOptions"
-                   data-ng-model="job.waveCount"
-                   sb-validation />
-        </div>
-        <div class="form-group has-feedback" style="width: 400px;" ng-show="job.waveCount > 0">
-            <label class="control-label" for="waveType">Wave type:</label>
-            <select kendo-combo-box
-                   class="form-control"
-                   id="waveType"
-                   name="waveType"
-                   data-ng-model="job.waveType">
-                <option>Random</option>
-                <option>Defined</option>
-            </select>
-        </div>
-
-        <input class="btn btn-default" type="submit" value="Submit">
     </form>
-    <pre>{{form | json }}</pre>
-    <pre>{{job | json}}</pre>
 
+    <pre>{{submitting}}</pre>
+
+    <pre style="font-size: smaller;">{{loginForm | json}}</pre>
 </body>
 </html>

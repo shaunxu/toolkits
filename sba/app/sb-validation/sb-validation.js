@@ -34,7 +34,7 @@ angular.module('sb.validation', [])
         };
 
         this.setStyles = function (opt) {
-            this.options.styles =opt;
+            this.options.styles = opt;
         };
 
         this.registerMessage = function (name, content) {
@@ -59,7 +59,7 @@ angular.module('sb.validation', [])
                 // copy global messages and inject value from attributes
                 var messages = angular.copy(sbValidationOptions.messages);
                 angular.forEach(messages, function (v, k) {
-                    if(attrs[k]) {
+                    if (attrs[k]) {
                         messages[k] = {
                             content: v,
                             value: attrs[k]
@@ -83,13 +83,13 @@ angular.module('sb.validation', [])
                 var getErrorMessage = function () {
                     if (ngFormCtrl.$submitted || ngModelCtrl.$dirty) {
                         var validatorName = null;
-                        Object.getOwnPropertyNames(ngModelCtrl.$error).forEach(function (vn) {
-                            if (!validatorName && !!ngModelCtrl.$error[vn]) {
-                                validatorName = vn;
+                        angular.forEach(ngModelCtrl.$error, function (isError, validationErrorKey) {
+                            if (!validatorName && !!isError) {
+                                validatorName = validationErrorKey;
                             }
                         });
-                        var errorMessage = messages[validatorName] || { content: validatorName, value: '' };
-                        var stringFormat = function(format) {
+                        var errorMessage = messages[validatorName] || {content: validatorName, value: ''};
+                        var stringFormat = function (format) {
                             if (format) {
                                 var args = Array.prototype.slice.call(arguments, 1);
                                 return format.replace(/{(\d+)}/g, function (match, number) {
@@ -106,7 +106,7 @@ angular.module('sb.validation', [])
                         return null;
                     }
                 };
-
+                // set popover for error message
                 element.popover({
                     content: function () {
                         return getErrorMessage();
@@ -114,21 +114,30 @@ angular.module('sb.validation', [])
                     placement: sbValidationOptions.tooltip.placement,
                     trigger: 'hover'
                 });
-
+                // clear all previous errors when user change the input value
+                // remove server side errors received previously
+                ngModelCtrl.$parsers.unshift(function (viewValue) {
+                    angular.forEach(ngModelCtrl.$error, function (isError, validationErrorKey) {
+                        ngModelCtrl.$setValidity(validationErrorKey, true);
+                    });
+                    return viewValue;
+                });
+                // apply input style and icon based on validation result
+                var showSuccess = !!attrs['sbValidationShowSuccess'];
                 scope.$watch(
                     function () {
                         if (ngFormCtrl.$submitted || ngModelCtrl.$dirty) {
                             if (ngModelCtrl.$valid) {
-                                return sbValidationOptions.styles.success; // success
+                                return showSuccess ? sbValidationOptions.styles.success : null
                             }
                             else if (ngModelCtrl.$pending) {
-                                return sbValidationOptions.styles.pending; // pending
+                                return sbValidationOptions.styles.pending;
                             }
                             else if (ngModelCtrl.$invalid) {
-                                return sbValidationOptions.styles.error; // error
+                                return sbValidationOptions.styles.error;
                             }
                             else {
-                                return sbValidationOptions.styles.success; // success
+                                return showSuccess ? sbValidationOptions.styles.success : null
                             }
                         }
                         else {
@@ -143,11 +152,10 @@ angular.module('sb.validation', [])
                             attrs.$addClass(css);
                         }
                     });
-
                 var spanHtml = ''
-                    + '<span class="glyphicon glyphicon-ok form-control-feedback has-success-icon"'
-                    + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$valid"></span>'
-                    + '<span class="glyphicon glyphicon-remove form-control-feedback has-error-icon"'
+                    + (showSuccess ? '<span class="glyphicon glyphicon-ok form-control-feedback has-success-icon"' : '')
+                    + (showSuccess ? 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$valid"></span>' : '')
+                    + '<span class="glyphicon glyphicon-alert form-control-feedback has-error-icon"'
                     + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$invalid"></span>'
                     + '<span class="glyphicon glyphicon-refresh form-control-feedback has-warning-icon"'
                     + 'ng-show="(' + ngFormCtrl.$name + '.$submitted || ' + modelFullName + '.$dirty) && ' + modelFullName + '.$pending"></span>';

@@ -1,39 +1,44 @@
 (function(angular) {
     'use strict';
-    angular
-        .module('customTriggerExample', ['sb.validation', 'kendo.directives'])
-        .controller('ExampleController', ['$scope', '$timeout', '$q', function($scope, $timeout) {
-            $scope.names = [
-                'Job 1',
-                'Job 2',
-                'Job 3'
-            ];
-
-            $scope.waveCountInputOptions = {
-                format: '#'
+    var app = angular.module('customTriggerExample', ['sb.validation', 'kendo.directives']);
+    app.controller('ExampleController', ['$scope', '$timeout', function($scope, $timeout) {
+            $scope.user = {
+                username: '',
+                password: '',
+                rememberUserName: false
             };
 
-            $scope.job = {};
+            $scope.submitting = false;
 
-            $scope.submit = function (event) {
+            $scope.login = function (event) {
                 event.preventDefault();
 
-                //var result = $scope.form.$validate();
-                //console.log(result);
+                if ($scope.loginForm.$valid) {
+                    $scope.submitting = true;
+                    $timeout(function () {
+                        $scope.submitting = false;
+                        angular.forEach($scope.loginForm, function (v, k) {
 
-                //$scope.form.$commitViewValue();
-
-                if ($scope.form.$valid) {
-                    $timeout(function() {
-                        $scope.form.jobName.$setValidity('xxx', false);
+                        });
+                        $scope.loginForm.username.$setValidity('authFailed', false);
                     }, 2000);
                 }
-                else {
-                    alert('Something wrong. You need to fix it.');
-                }
             };
-        }])
-        .directive('endMustGreaterThanStart', function () {
+        }]
+    );
+
+    app.directive('authFailed', function () {
+        return {
+            require: 'ngModel',
+            link: function(scope, elm, attrs, ctrl) {
+                ctrl.$validators.serverSideOnly = function () {
+                    return true;
+                }
+            }
+        };
+    });
+
+    app.directive('endMustGreaterThanStart', [function () {
             return {
                 require: 'ngModel',
                 link: function(scope, elm, attrs, ctrl) {
@@ -54,8 +59,9 @@
                     });
                 }
             };
-        })
-        .directive('notDuplicated', function ($q, $timeout) {
+        }]
+    );
+    app.directive('notDuplicated', ['$q', '$timeout', function ($q, $timeout) {
             return {
                 require: 'ngModel',
                 link: function(scope, elm, attrs, ctrl) {
@@ -82,5 +88,6 @@
                     };
                 }
             };
-        });
+        }]
+    );
 })(window.angular);
